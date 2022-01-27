@@ -130,7 +130,16 @@ MORPION
   height: 150px;
   border: black solid 1px;
   border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease-in-out;
 }
+
+.bloc svg {
+  font-size: 100px;
+}
+
 
 .player {
   text-align: center;
@@ -138,4 +147,8 @@ MORPION
   width: 150px;
   border: 1px solid black;
   border-radius: 20px;
+  transition: all 0.3s ease-in-out;
 }
+
+
+
