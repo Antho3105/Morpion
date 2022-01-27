@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Test JavaScript</title>
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="Test JavaScript" content="#" />
+    <link rel="shortcut icon" href="#" />
+
+</head>
+
+<body>
+    <!----------------------CONTENU PRINCIPAL---------------------->
+    <main>
+
+        <section class="conteneur">
+
+            <div class="morpion flex">
+                <div class="gestion">
+                    <h1>Jeu du morpion</h1>
+                    <div id="player1" class="flex">
+                        <label for="Name1">Nom joueur 1</label>
+                        <input type="text" id="name1">
+                    </div>
+                    <div id="player2" class="flex">
+                        <label for="Name2">Nom joueur 2</label>
+                        <input type="text" id="name2">
+   
+                    </div>
+                    <button id="start">Démarer une partie</button>
+
+                </div>
+                <div id="playerOne" class="player ">
+                    <h2>Joueur 1</h2>
+                    
+                    <h2>Score :</h2>
+                    <p id="scorerPlayerOne"></p>
+                </div>
+                <div class="game">
+
+                    <div class="flex">
+                        <div class="bloc case11"></div>
+                        <div class="bloc case12"></div>
+                        <div class="bloc case13"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="bloc case21"></div>
+                        <div class="bloc case22"></div>
+                        <div class="bloc case23"></div>
+                    </div>
+                    <div class="flex">
+                        <div class="bloc case31"></div>
+                        <div class="bloc case32"></div>
+                        <div class="bloc case33"></div>
+                    </div>
+                </div>
+                <div id="playerTwo" class="player">
+                    <h2>Joueur 2</h2>
+
+                    <h2>Score :</h2>
+                    <p id="scorerPlayerTwo"></p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</body>
+
+<script async src="js/app.js"></script>
+
+</html>

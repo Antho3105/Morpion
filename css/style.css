@@ -1,0 +1,140 @@
+/*----------------------------------------------------------------
+GLOBAL 
+---------------------------------------------------------------- */
+* {
+  box-sizing: border-box;
+}
+
+.clear {
+  clear: both;
+}
+
+.clearfix:before,
+.clearfix:after {
+  content: "";
+  display: table;
+}
+
+.clearfix:after {
+  clear: both;
+}
+
+nav ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+img,
+iframe,
+video {
+  max-width: 100%;
+}
+
+.flex {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+
+/*----------------------------------------------------------------
+STRUCTURE 
+---------------------------------------------------------------- */
+
+body {
+  background-color: white;
+}
+
+.conteneur {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+
+/*----------------------------------------------------------------
+GESTION
+---------------------------------------------------------------- */
+
+.gestion {
+  position: relative;
+  margin: 20px 0;
+  width: 100%;
+  height: 100px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
+
+.gestion h1 {
+  text-align: center;
+  position: absolute;
+  width: 250px;
+  margin: 0;
+  top: 5px;
+  left: calc(50% - 125px);
+}
+
+#player1, #player2 {
+  position: absolute;
+  width: 130px;
+  top: 20px;
+}
+
+input{
+  width: 100%;
+  border-radius: 10px;
+  padding: 5px 15px;
+}
+
+label{
+  width: 100%;
+  text-align: center;
+}
+
+#player1{
+  left: 10px;
+}
+
+#player2{
+  right: 10px;
+}
+
+#start{
+  cursor: pointer;
+  padding: 5px 10px;
+  position: absolute;
+  top: 60px;
+  width: 150px;
+  left: calc(50% - 75px);
+  border-radius: 10px;
+}
+
+/*----------------------------------------------------------------
+MORPION
+---------------------------------------------------------------- */
+
+
+
+
+
+.morpion {
+  align-items: center;
+}
+
+
+.bloc {
+  cursor: pointer;
+  margin: 10px 10px;
+  width: 150px;
+  height: 150px;
+  border: black solid 1px;
+  border-radius: 20px;
+}
+
+.player {
+  text-align: center;
+  height: 500px;
+  width: 150px;
+  border: 1px solid black;
+  border-radius: 20px;
+}
