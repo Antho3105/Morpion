@@ -78,6 +78,7 @@ GESTION
   position: absolute;
   width: 130px;
   top: 20px;
+  transition: opacity 0.5s ease-in-out, visibility 0.5s;
 }
 
 input{
@@ -99,7 +100,7 @@ label{
   right: 10px;
 }
 
-#start{
+#start, #stop {
   cursor: pointer;
   padding: 5px 10px;
   position: absolute;
@@ -109,13 +110,13 @@ label{
   border-radius: 10px;
 }
 
+#stop{
+  display: none;
+}
+
 /*----------------------------------------------------------------
 MORPION
 ---------------------------------------------------------------- */
-
-
-
-
 
 .morpion {
   align-items: center;
