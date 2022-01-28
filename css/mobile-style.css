@@ -9,7 +9,7 @@
 
 @media screen and (max-width:750px) {
     .bloc svg {
-        font-size: 80px;
+        font-size:65px;
     }
 
 
@@ -99,10 +99,10 @@
     }
 
     .bloc svg {
-        font-size: 90px;
+        font-size: 60px;
     }
     .player svg{
-        font-size: 70px;
+        font-size: 50px;
     }
 
 }

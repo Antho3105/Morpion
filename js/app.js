@@ -51,6 +51,7 @@ let Joueur1Gagne = () => {
     player1.style.backgroundColor = "green";
     player1.classList.add('winner')
     player2.style.backgroundColor = "";
+    player1.style.boxShadow = "5px 5px 5px black";
     scorePlayer1 += 1;
     returnScorePlayer1.innerHTML = `${scorePlayer1}`;
     startButton.style.display = "none";
@@ -64,7 +65,8 @@ let Joueur2Gagne = () => {
     gameStart = false;
     player1.style.backgroundColor = "";
     player2.style.backgroundColor = "green";
-    player2.classList.add('winner2')
+    player2.classList.add('winner')
+    player2.style.boxShadow = "5px 5px 5px black";
     scorePlayer2 += 1;
     returnScorePlayer2.innerHTML = `${scorePlayer2}`;
     startButton.style.display = "none";
@@ -92,6 +94,9 @@ let color = (case1, case2, case3) => {
     case1.style.boxShadow = "5px 5px 5px black";
     case2.style.boxShadow = "5px 5px 5px black";
     case3.style.boxShadow = "5px 5px 5px black";
+    case1.classList.add("winner")
+    case2.classList.add("winner")
+    case3.classList.add("winner")
 }
 
 
@@ -157,7 +162,7 @@ let startGame = () => {
         element.onclick = () => {
             if (playerTurn === 1 && gameStart) {
                 if (document.querySelector(`#${element.id}`).innerHTML == "") {
-                    document.querySelector(`#${element.id}`).innerHTML = `<i class="fas fa-times"></i>`;
+                    document.querySelector(`#${element.id}`).innerHTML = `<i class="fas fa-bug"></i>`;
                     document.querySelector(`#${element.id}`).classList.add('cross')
                     ++turn;
                     playerTurn = 2
@@ -167,7 +172,7 @@ let startGame = () => {
                 }
             } else if (playerTurn === 2 && gameStart) {
                 if (document.querySelector(`#${element.id}`).innerHTML == "") {
-                    document.querySelector(`#${element.id}`).innerHTML = `<i class="far fa-circle"></i>`;
+                    document.querySelector(`#${element.id}`).innerHTML = `<i class="fas fa-spray-can"></i>`;
                     document.querySelector(`#${element.id}`).classList.add('circle')
                     ++turn;
                     playerTurn = 1
@@ -180,9 +185,6 @@ let startGame = () => {
     )
 }
 
-
-
-
 startButton.onclick = () => {
     if (player1NameInput.value === "") {
         player1Title.innerHTML = "Joueur 1";
@@ -191,7 +193,7 @@ startButton.onclick = () => {
         player2Title.innerHTML = "Joueur 2";
     } else player2Title.innerHTML = player2NameInput.value;
     gameStart = true;
-    player2.classList.remove('winner2')
+    player2.classList.remove('winner')
     player1.classList.remove('winner')
     hide(player1Div);
     hide(player2Div);
@@ -217,6 +219,8 @@ stopButton.onclick = () => {
         element.innerHTML = '')
     player1.style.background = "";
     player2.style.background = "";
+    player1.style.boxShadow = "";
+    player2.style.boxShadow = "";
     bloc.forEach(element =>
         element.style.backgroundColor = "")
     bloc.forEach(element =>
@@ -230,7 +234,6 @@ stopButton.onclick = () => {
     returnScorePlayer2.innerHTML = 0;
 
 }
-
 
 restartButton.onclick = () => {
     startButton.style.display = "none";
@@ -246,17 +249,17 @@ restartButton.onclick = () => {
         element.classList = "bloc")
     bloc.forEach(element =>
         element.style.boxShadow = "none");
-    player2.classList.remove('winner2')
+    player2.classList.remove('winner')
     player1.classList.remove('winner')
-    if (playerTurn === 2){
+    player1.style.boxShadow = "";
+    player2.style.boxShadow = "";
+    if (playerTurn === 2) {
         player1.style.backgroundColor = "";
         player2.style.backgroundColor = "green";
-    }else {
+    } else {
         player1.style.backgroundColor = "green";
         player2.style.backgroundColor = "";
     }
-
     startGame();
     checkResult();
 }
-
