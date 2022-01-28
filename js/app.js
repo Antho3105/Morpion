@@ -6,6 +6,7 @@ let player2Div = document.querySelector('#player2')
 
 let startButton = document.querySelector('#start')
 let stopButton = document.querySelector('#stop')
+let restartButton = document.querySelector('#restart')
 let player1Title = document.querySelector('#playerOne h2')
 let player2Title = document.querySelector('#playerTwo h2')
 
@@ -27,8 +28,8 @@ let case33 = document.querySelector('#case33')
 
 let scorePlayer1 = 0
 let scorePlayer2 = 0
-let returnScorePlayer1 = document.querySelector('#scorerPlayerOne')
-let returnScorePlayer2 = document.querySelector('#scorerPlayerTwo')
+let returnScorePlayer1 = document.querySelector('#scorePlayerOne')
+let returnScorePlayer2 = document.querySelector('#scorePlayerTwo')
 
 
 gameStart = false
@@ -48,7 +49,14 @@ let Joueur1Gagne = () => {
     gameStart = false;
     turn = 0;
     player1.style.backgroundColor = "green";
+    player1.classList.add('winner')
     player2.style.backgroundColor = "";
+    scorePlayer1 += 1;
+    returnScorePlayer1.innerHTML = `${scorePlayer1}`;
+    startButton.style.display = "none";
+    stopButton.style.display = "none";
+    restartButton.style.display = "block";
+
 }
 
 let Joueur2Gagne = () => {
@@ -57,6 +65,12 @@ let Joueur2Gagne = () => {
     turn = 0;
     player1.style.backgroundColor = "";
     player2.style.backgroundColor = "green";
+    player2.classList.add('winner2')
+    scorePlayer2 += 1;
+    returnScorePlayer2.innerHTML = `${scorePlayer2}`;
+    startButton.style.display = "none";
+    stopButton.style.display = "none";
+    restartButton.style.display = "block";
 }
 
 let draw = () => {
@@ -65,7 +79,9 @@ let draw = () => {
     turn = 0;
     player1.style.backgroundColor = "";
     player2.style.backgroundColor = "";
-
+    startButton.style.display = "none";
+    stopButton.style.display = "none";
+    restartButton.style.display = "block";
 }
 
 
@@ -88,19 +104,22 @@ let checkResult = () => {
         color(case31, case32, case33);
     } else if (case11.classList == "bloc circle" && case21.classList == "bloc circle" && case31.classList == "bloc circle") {
         Joueur2Gagne();
-        color(case1, case21, case31);
+        color(case11, case21, case31);
     } else if (case12.classList == "bloc circle" && case22.classList == "bloc circle" && case32.classList == "bloc circle") {
         Joueur2Gagne();
         color(case12, case22, case32);
     } else if (case13.classList == "bloc circle" && case23.classList == "bloc circle" && case33.classList == "bloc circle") {
         Joueur2Gagne();
-        color(case31, case32, case33);
+        color(case13, case23, case33);
     } else if (case11.classList == "bloc circle" && case22.classList == "bloc circle" && case33.classList == "bloc circle") {
         Joueur2Gagne();
         color(case11, case22, case33);
+
     } else if (case13.classList == "bloc circle" && case22.classList == "bloc circle" && case31.classList == "bloc circle") {
         Joueur2Gagne();
         color(case13, case22, case31);
+
+
     } else if (case11.classList == "bloc cross" && case12.classList == "bloc cross" && case13.classList == "bloc cross") {
         Joueur1Gagne();
         color(case11, case12, case13);
@@ -130,10 +149,7 @@ let checkResult = () => {
     }
 }
 
-
-
 let startGame = () => {
-
     bloc.forEach(element =>
         element.onclick = () => {
             if (turn % 2 == 0 && gameStart) {
@@ -167,11 +183,13 @@ startButton.onclick = () => {
         player2Title.innerHTML = "Joueur 2";
     } else player2Title.innerHTML = player2NameInput.value;
     gameStart = true;
-
+    player2.classList.remove('winner2')
+    player1.classList.remove('winner')
     hide(player1Div);
     hide(player2Div);
     startButton.style.display = "none";
     stopButton.style.display = "block";
+    restartButton.style.display = "none";
     player1.style.backgroundColor = "green";
     player2.style.backgroundColor = "";
     startGame();
@@ -185,6 +203,7 @@ stopButton.onclick = () => {
     show(player2Div);
     startButton.style.display = "block";
     stopButton.style.display = "none";
+    restartButton.style.display = "none";
     bloc.forEach(element =>
         element.innerHTML = '')
     player1.style.background = "";

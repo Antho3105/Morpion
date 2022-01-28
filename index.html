@@ -5,7 +5,9 @@
     <meta charset="UTF-8" />
     <title>Test JavaScript</title>
     <link rel="stylesheet" href="css/normalize.css" />
+
     <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/mobile-style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="Test JavaScript" content="#" />
     <link rel="shortcut icon" href="#" />
@@ -17,8 +19,7 @@
     <main>
 
         <section class="conteneur">
-
-            <div class="morpion flex">
+            <div class="flex">
                 <div class="gestion">
                     <h1>Jeu du morpion</h1>
                     <div id="player1" class="flex">
@@ -31,14 +32,18 @@
                     </div>
                     <button id="start">Démarer une partie</button>
                     <button id="stop">Arreter la partie</button>
+                    <button id="restart">Nouvelle partie ?</button>
 
 
                 </div>
+</div>
+        </section>
+        <section class="morpion conteneur">
                 <div id="playerOne" class="player">
                     <h2></h2>
 
                     <h3>Score :</h3>
-                    <p id="scorerPlayerOne"></p>
+                    <p id="scorePlayerOne"></p>
                 </div>
                 <div class="game">
 
@@ -46,13 +51,11 @@
                         <div id="case11" class="bloc"></div>
                         <div id="case12" class="bloc"></div>
                         <div id="case13" class="bloc"></div>
-                    </div>
-                    <div class="flex">
+
                         <div id="case21" class="bloc"></div>
                         <div id="case22" class="bloc"></div>
                         <div id="case23" class="bloc"></div>
-                    </div>
-                    <div class="flex">
+
                         <div id="case31" class="bloc"></div>
                         <div id="case32" class="bloc"></div>
                         <div id="case33" class="bloc"></div>
@@ -62,10 +65,10 @@
                     <h2></h2>
 
                     <h3>Score :</h3>
-                    <p id="scorerPlayerTwo"></p>
+                    <p id="scorePlayerTwo"></p>
                 </div>
 
-            </div>
+  
 
         </section>
 

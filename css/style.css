@@ -1,3 +1,5 @@
+
+
 /*----------------------------------------------------------------
 GLOBAL 
 ---------------------------------------------------------------- */
@@ -74,33 +76,36 @@ GESTION
   left: calc(50% - 125px);
 }
 
-#player1, #player2 {
+#player1,
+#player2 {
   position: absolute;
   width: 130px;
   top: 20px;
   transition: opacity 0.5s ease-in-out, visibility 0.5s;
 }
 
-input{
+input {
   width: 100%;
   border-radius: 10px;
   padding: 5px 15px;
 }
 
-label{
+label {
   width: 100%;
   text-align: center;
 }
 
-#player1{
+#player1 {
   left: 10px;
 }
 
-#player2{
+#player2 {
   right: 10px;
 }
 
-#start, #stop {
+#start,
+#stop,
+#restart {
   cursor: pointer;
   padding: 5px 10px;
   position: absolute;
@@ -110,9 +115,12 @@ label{
   border-radius: 10px;
 }
 
-#stop{
+#stop,
+#restart {
   display: none;
 }
+
+
 
 /*----------------------------------------------------------------
 MORPION
@@ -120,20 +128,29 @@ MORPION
 
 .morpion {
   align-items: center;
+  position: relative;
+}
+
+.game{
+  margin: 0 auto;
+  width: calc(60vw);
+  max-width: 530px;
 }
 
 
 .bloc {
   cursor: pointer;
   margin: 10px 10px;
-  width: 150px;
-  height: 150px;
+  width: 15vw;
+  max-width: 150px;
+  height: 15vw;
+  max-height: 150px;
   border: black solid 1px;
   border-radius: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 .bloc svg {
@@ -142,13 +159,106 @@ MORPION
 
 
 .player {
+  position: absolute;
   text-align: center;
-  height: 500px;
-  width: 150px;
+  height: calc(56vw);
+  max-height: 520px;
+  width: calc(17vw);
+  max-width: 150px;
   border: 1px solid black;
   border-radius: 20px;
-  transition: all 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
+  transform-origin: center center;
 }
 
 
+#playerOne {
+  top: 0;
+  left: 0;
+}
 
+#playerTwo {
+  top: 0;
+  right: 0 ;
+}
+
+
+.winner {
+  -webkit-animation: flip-scale 2s linear infinite both;
+  animation: flip-scale 2s linear infinite both;
+}
+
+
+@-webkit-keyframes flip-scale {
+  0% {
+    -webkit-transform: scale(1) rotateY(0);
+    transform: scale(1) rotateY(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2) rotateY(180deg);
+    transform: scale(1.2) rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotateY(0deg);
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes flip-scale {
+  0% {
+    -webkit-transform: scale(1) rotateY(0);
+    transform: scale(1) rotateY(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2) rotateY(180deg);
+    transform: scale(1.25) rotateY(180deg) translateY(-45px) translateX(-16px);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotateY(0deg);
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+.winner2 {
+  -webkit-animation: flip-scale2 2s linear infinite both;
+  animation: flip-scale2 2s linear infinite both;
+}
+
+
+@-webkit-keyframes flip-scale2 {
+  0% {
+    -webkit-transform: scale(1) rotateY(0);
+    transform: scale(1) rotateY(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2) rotateY(180deg);
+    transform: scale(1.2) rotateY(180deg);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotateY(0deg);
+    transform: scale(1) rotateY(0deg);
+  }
+}
+
+@keyframes flip-scale2 {
+  0% {
+    -webkit-transform: scale(1) rotateY(0);
+    transform: scale(1) rotateY(0);
+  }
+
+  50% {
+    -webkit-transform: scale(1.2) rotateY(180deg);
+    transform: scale(1.25) rotateY(180deg) translateY(-45px) translateX(16px);
+  }
+
+  100% {
+    -webkit-transform: scale(1) rotateY(0deg);
+    transform: scale(1) rotateY(0deg);
+  }
+}
