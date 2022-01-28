@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8" />
-    <title>Test JavaScript</title>
+    <title>Jeu du morpion</title>
     <link rel="stylesheet" href="css/normalize.css" />
 
     <link rel="stylesheet" href="css/style.css" />
@@ -36,39 +36,41 @@
 
 
                 </div>
-</div>
+            </div>
         </section>
         <section class="morpion conteneur">
-                <div id="playerOne" class="player">
+            <div id="playerOne" class="player">
+                <div class="playerCard">
                     <h2></h2>
-
-                    <h3>Score :</h3>
-                    <p id="scorePlayerOne"></p>
+                    <i class="fas fa-times"></i>
+                    <p id="scorePlayerOne">0</p>
                 </div>
-                <div class="game">
+            </div>
+            <div class="game">
 
-                    <div class="flex">
-                        <div id="case11" class="bloc"></div>
-                        <div id="case12" class="bloc"></div>
-                        <div id="case13" class="bloc"></div>
+                <div class="flex">
+                    <div id="case11" class="bloc"></div>
+                    <div id="case12" class="bloc"></div>
+                    <div id="case13" class="bloc"></div>
 
-                        <div id="case21" class="bloc"></div>
-                        <div id="case22" class="bloc"></div>
-                        <div id="case23" class="bloc"></div>
+                    <div id="case21" class="bloc"></div>
+                    <div id="case22" class="bloc"></div>
+                    <div id="case23" class="bloc"></div>
 
-                        <div id="case31" class="bloc"></div>
-                        <div id="case32" class="bloc"></div>
-                        <div id="case33" class="bloc"></div>
-                    </div>
+                    <div id="case31" class="bloc"></div>
+                    <div id="case32" class="bloc"></div>
+                    <div id="case33" class="bloc"></div>
                 </div>
-                <div id="playerTwo" class="player">
+            </div>
+            <div id="playerTwo" class="player">
+                <div class="playerCard">
                     <h2></h2>
-
-                    <h3>Score :</h3>
-                    <p id="scorePlayerTwo"></p>
+                    <i class="far fa-circle"></i>
+                    <p id="scorePlayerTwo">0</p>
                 </div>
+            </div>
 
-  
+
 
         </section>
 

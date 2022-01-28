@@ -13,18 +13,21 @@
     }
 
 
-    .player h2, .player h3, .player p{
-    margin: 5px;
-    font-size: 16px;
+    .player h2,
+    .player h3 {
+        margin: 15px 5px;
+        font-size: 22px;
+    }
+
+    .player p {
+        margin: 15px 5px;
+    }
 }
 
-
-}
-
-@media screen and (max-width:550px) {
+@media screen and (max-width:600px) {
 
     .gestion {
-        height: 150px;
+        height: 120px;
         margin: 10px 0;
     }
 
@@ -38,16 +41,30 @@
     #start,
     #stop,
     #restart {
-    top: 50px;
+        top: 50px;
     }
 
     .player {
-        height: 25vw;
+        height: 23vw;
         width: calc(45vw);
         min-width: 150px;
         min-height: 90px;
         max-width: none;
+
     }
+
+   .player h2,
+    .player h3 {
+
+        margin: 5px 5px;
+        font-size: 18px;
+    }
+
+    .player p {
+        margin: 5px 5px;
+        width: 45%;
+    }
+
 
     #playerOne {
         top: auto;
@@ -62,20 +79,20 @@
     }
 
     .morpion {
-        height: calc(120vw);
-        min-height: 430px;
+        height: calc(107vw);
+        min-height: 425px;
         min-width: 320px;
     }
 
     .game {
-        width: calc(95vw);
+        width: calc(80vw);
         min-width: 320px
     }
 
     .bloc {
-        width: 27vw;
+        width: 24vw;
         min-width: 95px;
-        height: 27vw;
+        height: 24vw;
         min-height: 95px;
         margin: 5px 5px;
 
@@ -84,7 +101,54 @@
     .bloc svg {
         font-size: 90px;
     }
+    .player svg{
+        font-size: 70px;
+    }
 
+}
+
+
+@media screen and (max-width:530px) {
+    .player svg{
+        font-size: 50px;
+    }
+}
+
+@media screen and (max-width:450px) {
+
+    .gestion {
+        height: 120px;
+    }
+
+    #player1 label {
+        text-align: left;
+    }
+
+    #player2 label {
+        text-align: right;
+    }
+
+    .gestion h1 {
+        font-size: 22px;
+    }
+    
+    .player P {
+        margin: 0;
+    }
+
+    #start,
+    #stop,
+    #restart {
+        top: 35px;
+        font-size: 12px;
+        padding: 3px 2px;
+        width: 140px;
+        left: calc(50% - 70px);
+    }
+
+    .player svg{
+        font-size: 40px;
+    }
 
 }
 
